@@ -1,0 +1,58 @@
+{
+  "name": "@joshuaavalon/fastify-plugin-typebox",
+  "version": "0.0.1",
+  "description": "Fastify plugin for file based routing",
+  "type": "module",
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "rm:tests": "rimraf --glob dist/**/__tests__",
+    "prebuild": "rimraf dist",
+    "build": "tsc",
+    "test": "set NODE_OPTIONS=--enable-source-maps && mocha",
+    "lint": "eslint src"
+  },
+  "keywords": [
+    "fastify",
+    "fastify-plugin"
+  ],
+  "author": "Joshua Avalon",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/joshuaavalon/fastify-plugin-typebox.git"
+  },
+  "bugs": {
+    "url": "https://github.com/joshuaavalon/fastify-plugin-typebox/issues"
+  },
+  "homepage": "https://github.com/joshuaavalon/fastify-plugin-typebox#readme",
+  "types": "./dist/index.d.ts",
+  "module": "./dist/index.js",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "devDependencies": {
+    "@joshuaavalon/eslint-config-typescript": "^7.1.1",
+    "@types/chai": "^4.3.14",
+    "@types/mocha": "^10.0.6",
+    "@types/node": "^20.11.28",
+    "chai": "^5.1.0",
+    "eslint": "^8.57.0",
+    "fastify": "^4.26.2",
+    "globals": "^14.0.0",
+    "mocha": "^10.4.0",
+    "rimraf": "^5.0.5",
+    "typescript": "^5.4.2"
+  },
+  "dependencies": {
+    "@sinclair/typebox": "^0.32.29",
+    "fastify-plugin": "^4.5.1"
+  }
+}
