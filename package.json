@@ -1,6 +1,6 @@
 {
   "name": "@joshuaavalon/fastify-plugin-typebox",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Fastify plugin for file based routing",
   "type": "module",
   "publishConfig": {
