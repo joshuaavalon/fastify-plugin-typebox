@@ -53,6 +53,7 @@ describe("Test plugin", () => {
 
 declare module "fastify" {
   interface FastifyTypeProviderDefault {
-    output: this["input"] extends TSchema ? StaticDecode<this["input"]> : unknown;
+    validator: this['schema'] extends TSchema ? StaticDecode<this['schema']> : unknown
+    serializer: this['schema'] extends TSchema ? StaticDecode<this['schema']> : unknown
   }
 }
