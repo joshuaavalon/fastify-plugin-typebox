@@ -29,7 +29,7 @@ describe("Test plugin", () => {
           }
         }
       },
-      async function handler(req, res) {
+      async (req, res) => {
         const { a } = req.body;
         res.send({ success: Number.isInteger(a), a, b: "a" } as any);
       }
@@ -53,7 +53,7 @@ describe("Test plugin", () => {
 
 declare module "fastify" {
   interface FastifyTypeProviderDefault {
-    validator: this['schema'] extends TSchema ? StaticDecode<this['schema']> : unknown
-    serializer: this['schema'] extends TSchema ? StaticDecode<this['schema']> : unknown
+    validator: this["schema"] extends TSchema ? StaticDecode<this["schema"]> : unknown;
+    serializer: this["schema"] extends TSchema ? StaticDecode<this["schema"]> : unknown;
   }
 }

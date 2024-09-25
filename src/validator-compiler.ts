@@ -18,7 +18,7 @@ export function validatorCompilerFactory(opts: ValidatorCompilerFactoryOptions):
       const value = useDefault ? Value.Default(schema, references, input) : input;
       try {
         return { value: Value.Decode(schema, references, value) };
-      } catch (e) {
+      } catch (_e) {
         const errors = [...Value.Errors(schema, references, value)];
         return { error: new ValidationError(errors) };
       }
